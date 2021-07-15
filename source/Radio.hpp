@@ -11,8 +11,6 @@ public:
 		return stations.at(name);
 	};
 	
-	void create_listener() {};
-	
 	void destroy_station(const Station::Name& name) {
 		stations.erase(name);
 	};
