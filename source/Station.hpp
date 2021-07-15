@@ -17,10 +17,6 @@ public:
 		return name;
 	};
 	
-	Station& operator= (Station& other) {
-		return other;
-	};
-	
 	const Receiver::Identifier create_listener(std::unique_ptr <Receiver> listener) {
 		return create_receiver(std::move(listener));
 	};
@@ -39,12 +35,6 @@ public:
 				listener.call(std::forward <Args&&> (args)...);
 			};
 			
-		} else {
-			std::cerr << '\n'
-				<< "[WARNING]" << '\n'
-				<< "void Station::broadcast(Args... args)" << '\n'
-				<< '\t' << "- no receivers found" << '\n'
-				<< '\n';
 		};
 	};
 	
