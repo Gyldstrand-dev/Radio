@@ -10,8 +10,7 @@ public:
 
 	using Name = std::string;
 
-	Station(const Name& name) : name {name} {};	
-	~Station() {};
+	Station(const Name& name) : name {name} {};
 	
 	const Name& get_name() {
 		return name;
@@ -34,13 +33,10 @@ public:
 				auto& listener = static_cast <Listener <Args...>&> (*receiver);
 				listener.call(std::forward <Args&&> (args)...);
 			};
-			
 		};
 	};
 	
 private:
 
 	Name name;
-	
-
 };  

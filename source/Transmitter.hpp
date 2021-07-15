@@ -53,7 +53,6 @@ public:
 				return;
 			};
 		};
-		
 	};
 	
 	const bool has_receiver_for(const Receiver::Type& type) {
@@ -70,5 +69,4 @@ private:
 			return r1->get_frequency() < r2->get_frequency();
 		});
 	};
-	
 };
