@@ -25,12 +25,9 @@ public:
 		auto iterator = receivers.find(id.first);
 		if (iterator != receivers.end()) {
 			auto& receiver_vector = iterator->second;
-			for (auto& receiver : receiver_vector) {
-				if (receiver->get_identifier().second == id.second) {
-					receiver_vector.erase(std::remove(
-						receiver_vector.begin(),
-						receiver_vector.end(),
-						receiver));
+			for (size_t i {0}; i < receiver_vector.size(); i++) {
+				if (receiver_vector[i]->get_identifier().second == id.second) {
+					receiver_vector.erase(receiver_vector.begin() + i);
 					if (!receiver_vector.size()) receivers.erase(id.first);
 					return;
 				};
@@ -38,7 +35,7 @@ public:
 		};
 	};
 	
-	Receivers& get_receivers(const Receiver::Type& type) {
+	Receivers& get_receivers(const Receiver::Type& type) const {
 		return receivers.at(type);
 	};
 	
