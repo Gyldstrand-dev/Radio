@@ -69,7 +69,7 @@ private:
 	
 	void sort_by_frequency(const Receiver::Type& type) {
 		auto& vector = get_receivers(type);
-		std::stable_sort(vector.begin(), vector.end(), [] (const auto& r1, const auto& r2) -> bool {
+		std::sort(vector.begin(), vector.end(), [] (const auto& r1, const auto& r2) -> bool {
 			return r1->get_frequency() < r2->get_frequency();
 		});
 	};

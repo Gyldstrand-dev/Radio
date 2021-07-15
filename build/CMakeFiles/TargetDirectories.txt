@@ -1,0 +1,3 @@
+C:/DEV/projects/C++/Radio/build/CMakeFiles/Radio.dir
+C:/DEV/projects/C++/Radio/build/CMakeFiles/edit_cache.dir
+C:/DEV/projects/C++/Radio/build/CMakeFiles/rebuild_cache.dir

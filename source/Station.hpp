@@ -2,6 +2,7 @@
 #include "Transmitter.hpp"
 #include "Listener.hpp"
 #include <string>
+#include <iostream>
 
 class Station : public Transmitter {
 		
@@ -37,6 +38,13 @@ public:
 				auto& listener = static_cast <Listener <Args...>&> (*receiver);
 				listener.call(std::forward <Args&&> (args)...);
 			};
+			
+		} else {
+			std::cerr << '\n'
+				<< "[WARNING]" << '\n'
+				<< "void Station::broadcast(Args... args)" << '\n'
+				<< '\t' << "- no receivers found" << '\n'
+				<< '\n';
 		};
 	};
 	
